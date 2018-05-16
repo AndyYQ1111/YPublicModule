@@ -8,8 +8,6 @@
 
 import UIKit
 
-import Toast_Swift
-
 class Global: NSObject {
     static let shared = Global()
 }
