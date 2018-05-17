@@ -13,16 +13,21 @@ class Global: NSObject {
 }
 
 extension Global {
-    func currentViewController(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
-        if let nav = base as? UINavigationController {
-            return currentViewController(base: nav.visibleViewController)
+    
+    /// 获取最上层的Viewcontroller
+    ///
+    /// - Parameter topVC: 最上层的Viewcontroller
+    /// - Returns: 最上层的Viewcontroller
+    func topViewController(topVC: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+        if let nav = topVC as? UINavigationController {
+            return topViewController(topVC: nav.visibleViewController)
         }
-        if let tab = base as? UITabBarController {
-            return currentViewController(base: tab.selectedViewController)
+        if let tab = topVC as? UITabBarController {
+            return topViewController(topVC: tab.selectedViewController)
         }
-        if let presented = base?.presentedViewController {
-            return currentViewController(base: presented)
+        if let presented = topVC?.presentedViewController {
+            return topViewController(topVC: presented)
         }
-        return base
+        return topVC
     }
 }

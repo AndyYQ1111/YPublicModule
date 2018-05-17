@@ -10,27 +10,32 @@ import UIKit
 
 class PhotoCenter: NSObject {
     
-    typealias callBack = (_ image:UIImage) -> Void
-    
-    var finishCallBack:callBack!
-    
     static let shared = PhotoCenter()
+    
+    
+    override init() {
+        super.init()
+        chooseImg()
+    }
+    
+    var imgBack:((_ image:UIImage)->())?
+    
 
-    func chooseImg() {
+    private func chooseImg() {
         let alertC = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let action0 = UIAlertAction(title: "拍照", style: .default) { (action) in
             let imgPickC = UIImagePickerController()
             imgPickC.delegate = self
             imgPickC.allowsEditing = true
             imgPickC.sourceType = .camera
-            Global.shared.currentViewController()?.present(imgPickC, animated: true, completion: nil)
+            Global.shared.topViewController()?.present(imgPickC, animated: true, completion: nil)
         }
         let action1 = UIAlertAction(title: "相册", style: .default) { (action) in
             let imgPickC = UIImagePickerController()
             imgPickC.delegate = self
             imgPickC.allowsEditing = true
             imgPickC.sourceType = .photoLibrary
-            Global.shared.currentViewController()?.present(imgPickC, animated: true, completion: nil)
+            Global.shared.topViewController()?.present(imgPickC, animated: true, completion: nil)
         }
         let action2 = UIAlertAction(title: "取消", style: .cancel) { (action) in
             return
@@ -39,15 +44,15 @@ class PhotoCenter: NSObject {
         alertC.addAction(action1)
         alertC.addAction(action2)
         
-        Global.shared.currentViewController()?.present(alertC, animated: true, completion: {
-        })
+        Global.shared.topViewController()?.present(alertC, animated: true, completion:nil)
     }
+
 }
 
 extension PhotoCenter:UINavigationControllerDelegate,UIImagePickerControllerDelegate{
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        Global.shared.currentViewController()?.dismiss(animated: true, completion: {
-            Global.shared.currentViewController()?.tabBarController?.tabBar.isHidden = true
+        Global.shared.topViewController()?.dismiss(animated: true, completion: {
+            Global.shared.topViewController()?.tabBarController?.tabBar.isHidden = true
         })
     }
     
@@ -55,11 +60,11 @@ extension PhotoCenter:UINavigationControllerDelegate,UIImagePickerControllerDele
         let mediaType = info[UIImagePickerControllerMediaType] as! String
         if mediaType == "public.image" {
             let img = info[UIImagePickerControllerEditedImage] as! UIImage
-            self.finishCallBack(img)
+            self.imgBack!(img)
         }
         
-        Global.shared.currentViewController()?.dismiss(animated: true, completion: {
-            Global.shared.currentViewController()?.tabBarController?.tabBar.isHidden = true
+        Global.shared.topViewController()?.dismiss(animated: true, completion: {
+            Global.shared.topViewController()?.tabBarController?.tabBar.isHidden = true
         })
     }
 }
