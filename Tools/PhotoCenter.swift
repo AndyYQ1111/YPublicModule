@@ -40,6 +40,7 @@ class PhotoCenter: NSObject {
         let action2 = UIAlertAction(title: "取消", style: .cancel) { (action) in
             return
         }
+        
         alertC.addAction(action0)
         alertC.addAction(action1)
         alertC.addAction(action2)

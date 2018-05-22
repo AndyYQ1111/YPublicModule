@@ -14,11 +14,18 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "历史", target: self, action: #selector(click))
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    @objc func click(){
+        print("click")
+    }
+    
     @IBAction func chooseImg(_ sender: UIButton) {
         PhotoCenter.shared.imgBack = { (img) in
             self.imgV.image = img

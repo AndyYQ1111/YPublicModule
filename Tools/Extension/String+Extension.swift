@@ -13,4 +13,13 @@ extension String {
     func size(font : UIFont , maxSize : CGSize) -> CGSize {
         return self.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin], attributes: [NSAttributedStringKey.font : font], context: nil).size
     }
+    
+    func numFormat() -> String {
+        let num = (self as NSString).floatValue
+        var newStr = self
+        if num > 10000 {
+            newStr = String(format: "%.2f",num/10000)
+        }
+        return newStr
+    }
 }

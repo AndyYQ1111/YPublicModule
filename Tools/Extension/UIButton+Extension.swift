@@ -11,16 +11,16 @@ import UIKit
 extension UIButton {
     convenience init(title : String?,imageName : String?, titleSize : CGFloat) {
         self.init(type: .custom)
-        if title != nil {
+        if title != nil && title != "" {
             setTitle(title, for: .normal)
         }
         
-        if imageName != nil {
+        if imageName != nil && imageName != "" {
             let img = UIImage.init(named: imageName!)
             setImage(img, for: .normal)
         }
         
-        setTitleColor(UIColor.white, for: .normal)
+        setTitleColor(UIColor.orange, for: .normal)
         titleLabel?.font = UIFont.systemFont(ofSize: titleSize)
         sizeToFit()
     }

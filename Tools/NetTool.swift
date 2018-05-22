@@ -14,7 +14,7 @@ enum HttpType {
     case POST
 }
 
-class NetWorkTools {
+class NetTool {
     class func requestData(method : HttpType , urlString : String , paraDic : [String : Any]? = nil , finishCallBack:@escaping (_ result : AnyObject) -> ()) {
     
         let urlString = "http://thzn_td_app.100memory.com/" + urlString

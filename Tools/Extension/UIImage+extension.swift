@@ -32,4 +32,21 @@ extension UIImage {
         self.init(cgImage: (UIGraphicsGetImageFromCurrentImageContext()?.cgImage)!)
         UIGraphicsEndImageContext()
     }
+    
+    
+    func compress(width:CGFloat) -> UIImage {
+        let sourceSize = self.size
+        let sourceWidth = sourceSize.width
+        let sourceHeight = sourceSize.height
+        
+        let targetHeight = (width / sourceWidth) * sourceHeight
+        UIGraphicsBeginImageContext(CGSize(width: width, height: targetHeight))
+        self.draw(in: CGRect(x: 0, y: 0, width: width, height: targetHeight))
+        
+        let newImg = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImg!
+    }
+    
 }

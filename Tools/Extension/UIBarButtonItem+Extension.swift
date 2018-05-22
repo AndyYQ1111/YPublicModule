@@ -9,9 +9,17 @@
 import UIKit
 
 extension UIBarButtonItem {
-    convenience init(title : String,imageName: String = "left_select_img", titleSize : CGFloat = 16,target: Any? , action: Selector) {
+    convenience init(title : String?,imageName: String?, titleSize : CGFloat = 15,target: Any? , action: Selector) {
         let btn = UIButton(title: title, imageName: imageName, titleSize: titleSize)
         btn.addTarget(target, action: action, for: .touchUpInside)
         self.init(customView: btn)
+    }
+    
+    convenience init(title : String? = "", titleSize : CGFloat = 15,target: Any? , action: Selector) {
+        self.init(title: title, imageName: nil, titleSize: titleSize, target: Any?.self, action: action)
+    }
+    
+    convenience init(imageName: String? = "", titleSize : CGFloat = 15,target: Any? , action: Selector) {
+        self.init(title: nil, imageName: imageName, titleSize: titleSize, target: Any?.self, action: action)
     }
 }
