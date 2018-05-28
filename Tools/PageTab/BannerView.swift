@@ -1,7 +1,7 @@
 //
 //  CircleAD.swift
 //  Medical-swift
-//
+//  广告无限轮播
 //  Created by YueAndy on 2018/1/23.
 //  Copyright © 2018年 pingan. All rights reserved.
 //
