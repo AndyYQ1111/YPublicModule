@@ -28,6 +28,10 @@
 		5AB6DDAB20B415BF00BF2685 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6DDA820B415BF00BF2685 /* BaseTableViewCell.swift */; };
 		5AB6DDAC20B415BF00BF2685 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6DDA920B415BF00BF2685 /* BaseNavigationController.swift */; };
 		5AB6DDAE20B41AB400BF2685 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6DDAD20B41AB400BF2685 /* Date+Extension.swift */; };
+		5AB6DDB220BBEEEB00BF2685 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6DDB020BBEEEB00BF2685 /* PageView.swift */; };
+		5AB6DDB320BBEEEB00BF2685 /* PageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB6DDB120BBEEEB00BF2685 /* PageView.xib */; };
+		5AB6DDBE20BBF71300BF2685 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6DDBC20BBF71300BF2685 /* BannerView.swift */; };
+		5AB6DDBF20BBF71300BF2685 /* BannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB6DDBD20BBF71300BF2685 /* BannerView.xib */; };
 		71643295BD2BFD4E3E3D546A /* Pods_YPublicModuleDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D834F8D3AE1AE5B84544A077 /* Pods_YPublicModuleDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +61,10 @@
 		5AB6DDA820B415BF00BF2685 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		5AB6DDA920B415BF00BF2685 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		5AB6DDAD20B41AB400BF2685 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		5AB6DDB020BBEEEB00BF2685 /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		5AB6DDB120BBEEEB00BF2685 /* PageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageView.xib; sourceTree = "<group>"; };
+		5AB6DDBC20BBF71300BF2685 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		5AB6DDBD20BBF71300BF2685 /* BannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BannerView.xib; sourceTree = "<group>"; };
 		7A3CA0EBC9842112ADB5940C /* Pods-YPublicModuleDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YPublicModuleDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-YPublicModuleDemo/Pods-YPublicModuleDemo.release.xcconfig"; sourceTree = "<group>"; };
 		D834F8D3AE1AE5B84544A077 /* Pods_YPublicModuleDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YPublicModuleDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -116,6 +124,7 @@
 		5A2EDAF520ABBD2C004EAAD3 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				5AB6DDAF20BBEECE00BF2685 /* PageTab */,
 				5AB6DDA620B415BF00BF2685 /* Base */,
 				5AB6DDA320B40DE400BF2685 /* NetTool.swift */,
 				5A42415A20ABBED900EFB1A5 /* Global.swift */,
@@ -160,6 +169,17 @@
 				5AB6DDA920B415BF00BF2685 /* BaseNavigationController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		5AB6DDAF20BBEECE00BF2685 /* PageTab */ = {
+			isa = PBXGroup;
+			children = (
+				5AB6DDB020BBEEEB00BF2685 /* PageView.swift */,
+				5AB6DDB120BBEEEB00BF2685 /* PageView.xib */,
+				5AB6DDBC20BBF71300BF2685 /* BannerView.swift */,
+				5AB6DDBD20BBF71300BF2685 /* BannerView.xib */,
+			);
+			path = PageTab;
 			sourceTree = "<group>";
 		};
 		8BA2C2B5BFE7146C81F0E149 /* Pods */ = {
@@ -232,7 +252,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A2EDAEE20ABBCDE004EAAD3 /* LaunchScreen.storyboard in Resources */,
+				5AB6DDB320BBEEEB00BF2685 /* PageView.xib in Resources */,
 				5A2EDAEB20ABBCDE004EAAD3 /* Assets.xcassets in Resources */,
+				5AB6DDBF20BBF71300BF2685 /* BannerView.xib in Resources */,
 				5A2EDAE920ABBCDD004EAAD3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,9 +315,11 @@
 				5A2EDB5320ABBD2D004EAAD3 /* Validate.swift in Sources */,
 				5A2EDB5020ABBD2D004EAAD3 /* String+Extension.swift in Sources */,
 				5A2EDAE620ABBCDD004EAAD3 /* ViewController.swift in Sources */,
+				5AB6DDBE20BBF71300BF2685 /* BannerView.swift in Sources */,
 				5AB6DDA420B40DE400BF2685 /* NetTool.swift in Sources */,
 				5A2EDB4C20ABBD2D004EAAD3 /* UIButton+Extension.swift in Sources */,
 				5AB6DDAA20B415BF00BF2685 /* BaseViewController.swift in Sources */,
+				5AB6DDB220BBEEEB00BF2685 /* PageView.swift in Sources */,
 				5A2EDB4F20ABBD2D004EAAD3 /* UIColor+extention.swift in Sources */,
 				5A2EDAE420ABBCDD004EAAD3 /* AppDelegate.swift in Sources */,
 				5A42415B20ABBED900EFB1A5 /* Global.swift in Sources */,

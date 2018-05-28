@@ -26,8 +26,13 @@
                                     <action selector="chooseImg:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a0n-I0-H5L"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qo3-04-oMP" customClass="PageView" customModule="YPublicModuleDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="213"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XXR-Ks-hcK">
-                                <rect key="frame" x="67" y="83" width="240" height="128"/>
+                                <rect key="frame" x="84" y="363" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -37,11 +42,12 @@
                     <navigationItem key="navigationItem" id="UKp-ae-XMb"/>
                     <connections>
                         <outlet property="imgV" destination="XXR-Ks-hcK" id="JMz-4d-DNT"/>
+                        <outlet property="pageView" destination="qo3-04-oMP" id="Ib0-II-qte"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="998" y="-564"/>
+            <point key="canvasLocation" x="997.60000000000002" y="-564.46776611694156"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zk8-Mx-fdW">
