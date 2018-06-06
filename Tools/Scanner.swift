@@ -19,7 +19,7 @@ class Scanner: NSObject {
     //视频预览层
     private let videoPreviewLayer = AVCaptureVideoPreviewLayer()
     
-    private var handleCompleted:((String)->())? = nil
+    private var handleCompleted: ((String) -> ())? = nil
     
     private override init(){
         

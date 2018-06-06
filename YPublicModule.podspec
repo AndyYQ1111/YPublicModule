@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = 'YPublicModule'
-  s.version = '1.0.3'
+  s.version = '1.0.4'
   s.license = 'MIT'
   s.summary = 'PublicModule in Swift'
   s.homepage = 'https://github.com/Yueqingshan/YPublicModule'

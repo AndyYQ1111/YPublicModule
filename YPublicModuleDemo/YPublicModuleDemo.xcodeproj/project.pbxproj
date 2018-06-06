@@ -23,7 +23,6 @@
 		5A2EDB5420ABBD2D004EAAD3 /* PhotoCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2EDB0020ABBD2C004EAAD3 /* PhotoCenter.swift */; };
 		5A2EDB5520ABBD2D004EAAD3 /* HYSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2EDB0220ABBD2C004EAAD3 /* HYSlider.m */; };
 		5A392F6920C7B19C0090EEE9 /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A392F6820C7B19C0090EEE9 /* Scanner.swift */; };
-		5A392F6B20C7B9800090EEE9 /* QRCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A392F6A20C7B9800090EEE9 /* QRCreator.swift */; };
 		5A42415B20ABBED900EFB1A5 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A42415A20ABBED900EFB1A5 /* Global.swift */; };
 		5AB6DDA420B40DE400BF2685 /* NetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6DDA320B40DE400BF2685 /* NetTool.swift */; };
 		5AB6DDAA20B415BF00BF2685 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB6DDA720B415BF00BF2685 /* BaseViewController.swift */; };
@@ -62,7 +61,6 @@
 		5A2EDB0220ABBD2C004EAAD3 /* HYSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSlider.m; sourceTree = "<group>"; };
 		5A2EDB0320ABBD2C004EAAD3 /* HYSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSlider.h; sourceTree = "<group>"; };
 		5A392F6820C7B19C0090EEE9 /* Scanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
-		5A392F6A20C7B9800090EEE9 /* QRCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCreator.swift; sourceTree = "<group>"; };
 		5A42415A20ABBED900EFB1A5 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		5AB6DDA320B40DE400BF2685 /* NetTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetTool.swift; sourceTree = "<group>"; };
 		5AB6DDA720B415BF00BF2685 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -142,7 +140,6 @@
 				5A42415A20ABBED900EFB1A5 /* Global.swift */,
 				5A2EDB0020ABBD2C004EAAD3 /* PhotoCenter.swift */,
 				5A2EDAFF20ABBD2C004EAAD3 /* Validate.swift */,
-				5A392F6A20C7B9800090EEE9 /* QRCreator.swift */,
 				5A392F6820C7B19C0090EEE9 /* Scanner.swift */,
 				5A2EDAF720ABBD2C004EAAD3 /* Extension */,
 				5A2EDB0120ABBD2C004EAAD3 /* HYSlider */,
@@ -352,7 +349,6 @@
 				5AB6DDAC20B415BF00BF2685 /* BaseNavigationController.swift in Sources */,
 				5A2EDB5120ABBD2D004EAAD3 /* UIBarButtonItem+Extension.swift in Sources */,
 				5A2EDB5420ABBD2D004EAAD3 /* PhotoCenter.swift in Sources */,
-				5A392F6B20C7B9800090EEE9 /* QRCreator.swift in Sources */,
 				5AB6DDAE20B41AB400BF2685 /* Date+Extension.swift in Sources */,
 				5A392F6920C7B19C0090EEE9 /* Scanner.swift in Sources */,
 			);
