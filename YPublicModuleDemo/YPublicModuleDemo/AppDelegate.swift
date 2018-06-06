@@ -15,7 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        var childVcs:[UIViewController] = []
+        childVcs.append(ViewController())
+        childVcs.append(UIViewController())
+        childVcs.append(UIViewController())
+        let rootVc = BaseTabBarController()
+        rootVc.addChildVcs(childVcs: childVcs)
+        
+        window?.rootViewController = rootVc
         return true
     }
 
