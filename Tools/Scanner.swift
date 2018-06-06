@@ -25,7 +25,7 @@ class Scanner: NSObject {
         
         super.init()
         
-        AVCaptureDevice.requestAccess(for: .video) { (isSuccess) in
+        AVCaptureDevice.requestAccess(for: AVMediaType.video) { (isSuccess) in
             if isSuccess {
                 self.prepare()
             }
