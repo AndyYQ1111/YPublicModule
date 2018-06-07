@@ -7,4 +7,5 @@ target 'YPublicModuleDemo' do
     pod 'Kingfisher'  	# 图片异步加载
     pod 'SnapKit'    	# 代码约束
     pod 'Toast-Swift'
+    pod 'swiftScan'
 end

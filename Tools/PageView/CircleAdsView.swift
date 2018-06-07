@@ -1,26 +1,26 @@
 //
-//  CircleAD.swift
-//  Medical-swift
-//  广告无限轮播
-//  Created by YueAndy on 2018/1/23.
+//  CircleAdsView.swift
+//  YPublicModuleDemo
+//
+//  Created by YueAndy on 2018/6/7.
 //  Copyright © 2018年 pingan. All rights reserved.
 //
 
 import UIKit
 import Kingfisher
 
-let kAdCellID = "kAdCellID"
+class CircleAdsView: CustomView {
 
-class BannerView: UIView {
-    
-    @IBOutlet weak var pagecontrol: UIPageControl!
     @IBOutlet weak var cv_circle: UICollectionView!
+    @IBOutlet weak var pagecontrol: UIPageControl!
+    
+    
+    let cellId = "cellId"
+    
     
     private var circleTimer:Timer?
     
-    var layout:UICollectionViewFlowLayout?
-    
-    var adsArr: NSMutableArray? {
+    var adsArr: Array<String>? {
         didSet{
             let indexpath = NSIndexPath(row: (adsArr?.count)! * 40, section: 0)
             
@@ -35,24 +35,11 @@ class BannerView: UIView {
         }
     }
     
-    
-    class func circleAd(rect:CGRect) -> BannerView {
-        let  cad = Bundle.main.loadNibNamed("CircleAD", owner: nil, options: nil)?.last as! BannerView
-        cad.frame = rect
-        cad.layout?.itemSize = rect.size
-        return cad
+    override func setupUI() {
+        cv_circle.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        cv_circle.reloadData()
     }
-    
-    override func awakeFromNib() {
-        cv_circle.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kAdCellID)
-        layout = cv_circle.collectionViewLayout as? UICollectionViewFlowLayout
-        layout?.minimumLineSpacing = 0
-        layout?.minimumInteritemSpacing = 0
-        layout?.scrollDirection = .horizontal
-        cv_circle.showsHorizontalScrollIndicator = false
-        cv_circle.delegate = self
-        cv_circle.dataSource = self
-    }
+
     
     @objc func scrollTonext() {
         //1.获取滚动的偏移量
@@ -72,17 +59,25 @@ class BannerView: UIView {
     }
 }
 
-extension BannerView : UICollectionViewDelegate,UICollectionViewDataSource {
+extension CircleAdsView : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 100000
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kAdCellID, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
         let imageV = UIImageView(frame: cell.bounds)
-        imageV.kf.setImage(with: URL(string: ""), placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+        imageV.kf.setImage(with: URL(string: adsArr![indexPath.row % 4]), placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
         cell.addSubview(imageV)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.bounds.width, height:collectionView.bounds.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

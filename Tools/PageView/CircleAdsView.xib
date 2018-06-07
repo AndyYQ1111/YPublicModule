@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CircleAdsView">
+            <connections>
+                <outlet property="cv_circle" destination="niM-FF-upN" id="DDG-z7-zzh"/>
+                <outlet property="pagecontrol" destination="Xbj-f1-fCB" id="UFk-HP-hiN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="169"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="niM-FF-upN">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="169"/>
+                    <color key="backgroundColor" red="0.21960784310000001" green="0.5450980392" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="lfQ-h0-GNq">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="jtc-on-Ygv"/>
+                        <outlet property="delegate" destination="-1" id="2N3-q9-nUH"/>
+                    </connections>
+                </collectionView>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Xbj-f1-fCB">
+                    <rect key="frame" x="140.5" y="120" width="39" height="37"/>
+                </pageControl>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Xbj-f1-fCB" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0E3-WT-ws5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="niM-FF-upN" secondAttribute="bottom" id="79o-et-AUB"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="niM-FF-upN" secondAttribute="trailing" id="Ivp-4v-XBG"/>
+                <constraint firstItem="niM-FF-upN" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="O2k-GB-bZZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Xbj-f1-fCB" secondAttribute="bottom" constant="12" id="fMD-D3-Hwb"/>
+                <constraint firstItem="niM-FF-upN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="q0f-1l-Y10"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="12" y="-291.5"/>
+        </view>
+    </objects>
+</document>

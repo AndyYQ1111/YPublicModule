@@ -9,7 +9,7 @@
 import UIKit
 
 
-class PageView: UIView{
+class PageView: CustomView{
     
     //MARK:定义常量
     
@@ -54,44 +54,22 @@ class PageView: UIView{
     @IBOutlet weak var sv_head: UIScrollView!
     @IBOutlet weak var cv_content: UICollectionView!
     
-    //初始化时将xib中的view添加进来
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        contentView = loadViewFromNib()
-        contentView.frame = CGRect(origin: CGPoint.zero, size: bounds.size)
-        addSubview(contentView)
-    }
     
-    //初始化时将xib中的view添加进来
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        contentView = loadViewFromNib()
-        contentView.frame = CGRect(origin: CGPoint.zero, size: bounds.size)
-        addSubview(contentView)
-        //初始化属性配置
-    }
-    
-
-    private func loadViewFromNib() -> UIView {
-        let className = type(of: self)
-        let bundle = Bundle(for: className)
-        let name = NSStringFromClass(className).components(separatedBy: ".").last
-        let nib = UINib(nibName: name!, bundle: bundle)
-        let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
-        return view
-    }
-}
-
-extension PageView {
-    
-    func setupUI() {
+    override func setupUI() {
         //注册cell
         cv_content.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellID)
+        
+        
+    }
+    
+    func reloadData() {
         cv_content.reloadData()
         setupBtns()
         setupBottomLine()
     }
-    
+}
+
+extension PageView {
     //标签按钮
     private func setupBtns() {
         var btnW: CGFloat
